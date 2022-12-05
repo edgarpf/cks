@@ -63,9 +63,11 @@ spec:
 ```
 There are existing Pods in Namespace space1 and space2 .
 
-We need a new NetworkPolicy named np that restricts all Pods in Namespace space1 to only have outgoing traffic to Pods in Namespace space2 .
+We need a new NetworkPolicy named np that restricts all Pods in Namespace space1 to only have outgoing traffic to Pods in Namespace space2.
 
-We also need a new NetworkPolicy named np that restricts all Pods in Namespace space2 to only have incoming traffic from Pods in Namespace space1 .
+We also need a new NetworkPolicy named np that restricts all Pods in Namespace space2 to only have incoming traffic from Pods in Namespace space1.
+
+The NetworkPolicies should still allow outgoing DNS traffic on port 53 TCP and UDP.
 
 ```
 k get ns --show-labels
